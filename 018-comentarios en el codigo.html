@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Aplicación</title>
+
+    <style>
+      /* FUENTES PERSONALIZADAS*/
+      @font-face { /* Carga fuente para títulos */
+        font-family: inicio;
+        src: url(fuentes/LEMONMILK-Bold-inicio.otf);
+      }
+
+      @font-face { /* Carga fuente ligera para textos */
+        font-family: parrafo;
+        src: url(fuentes/LEMONMILK-Light.otf);
+      }
+
+      @font-face { /* Carga fuente regular para subtítulos/botones */
+        font-family: subtitulo;
+        src: url(fuentes/LEMONMILK-Regular.otf);
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;                             /* Centrado avanzado con flexbox */
+        justify-content: center;
+        align-items: center;
+        background: url(fondo.jpg) center/cover no-repeat; /* Imagen de fondo a pantalla completa */
+      }
+
+      main {
+        width: 500px;
+        height: 590px;
+        background: rgba(255, 255, 255, 0.2);      /* Fondo semi-transparente */
+        box-sizing: border-box;
+        padding: 30px;
+        backdrop-filter: blur(15px);               /* Efecto avanzado: glassmorphism */
+        text-align: center;
+        color: #d4eded;
+        border: 3px solid rgba(202, 253, 212, 0.92);
+        border-radius: 30px;
+        padding-bottom: 10px;
+        font-family: parrafo;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra para profundidad */
+        padding-top: 5px;
+        animation: aparecer 1.3s ease forwards;    /* Aplica animación definida en @keyframes */
+        opacity: 0;                                /* Estado inicial para animación */
+      }
+
+      /*CAMPOS DE EMAIL Y PASSWORD*/
+      input[type=email],
+      input[type=password] {
+        width: 100%;
+        margin: 15px 0px;
+        padding: 15px 0px;
+        border: none;
+        background: rgba(0, 0, 0, 0);
+        border-bottom: 1px solid rgba(202, 253, 212, 0.92);
+        outline: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: darkslategrey;
+      }
+
+      input::placeholder {
+        color: #d4eded;
+        font-family: parrafo;
+      }
+
+      h1 {
+        font-size: 40px;
+        font-family: inicio, cursive;
+        margin: 0px;
+        color: darkslategrey;
+        text-transform: uppercase;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombra de texto para resaltar título */
+      }
+
+      /* BOTÓN DE ACCEDER*/
+      input[type=submit] {
+        margin: 15px 0px;
+        padding: 15px 0px;
+        background: rgba(202, 253, 212, 0.92);
+        color: darkslategrey;
+        width: 300px;
+        border-radius: 50px;
+        font-family: subtitulo;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        font-size: 20px;
+        border: none;
+        font-weight: 600;                          /* Un poco menos que bold completo */
+        cursor: pointer;                           /* Indica que es clicable */
+      }
+
+      /* Efecto avanzado hover: animación suave al pasar el ratón */
+      input[type=submit]:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Icono en campo email */
+      input[type=email] {
+        background: url(email.png) no-repeat right center;
+        background-size: 25px;
+      }
+
+      /* Icono en campo password */
+      input[type=password] {
+        background: url(password.png) no-repeat right center;
+        background-size: 25px;
+      }
+
+      .recordar-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 40px;
+      }
+
+      #olvidar {
+        margin-left: 30px;
+      }
+
+      p {
+        margin-bottom: 5px;
+      }
+
+      a {
+        color: #d4eded;
+        text-decoration: none;
+        transition: color 0.3s ease;              /* Transición suave en hover */
+      }
+
+      a:hover {
+        color: darkslategrey;
+      }
+
+      img {
+        width: 110px;
+        display: block;
+        margin: 0px auto 0px auto;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4)); /* Sombra avanzada sobre PNG */
+      }
+
+      /* Zona donde mostraremos el mensaje de validación del login */
+      #mensaje-login {
+        margin-top: 5px;
+        font-size: 12px;
+        min-height: 18px;                          /* Evita que el layout salte cuando aparece texto */
+        font-family: parrafo;
+      }
+
+      /*EFECTO FOCUS AVANZADO*/
+      input[type=email]:focus,
+      input[type=password]:focus {
+        border-bottom: 2px solid #aef9d8;          /* Resalta el campo activo */
+        transition: border-bottom 0.3s ease;       /* Transición suave */
+      }
+
+      /*ANIMACIÓN KEYFRAMES */
+      @keyframes aparecer {
+        from {
+          transform: translateY(50px);             /* Empieza más abajo */
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);                /* Termina en su sitio */
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <form>
+        <img src="logo.png" alt="Logo de marca">
+
+        <h1>Iniciar sesión</h1>
+
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Contraseña">
+
+        <div class="recordar-container">
+          <input type="checkbox" id="recordar">
+          <label for="recordar">Recordar</label>
+        </div>
+
+        <a href="#" id="olvidar">Olvidé la contraseña</a>
+
+        <input type="submit" value="Acceder">
+
+        <!--Mensaje de validación del login (éxito / error) -->
+        <p id="mensaje-login"></p>
+
+        <p>No tengo cuenta</p>
+        <a href="crear.html" id="crear">Crear una</a>
+      </form>
+    </main>
+
+    <script>
+      // Seleccionamos el formulario
+      const form = document.querySelector("form");
+      // Seleccionamos el input de email
+      const emailInput = document.querySelector('input[type="email"]');
+      // Seleccionamos el input de contraseña
+      const passInput = document.querySelector('input[type="password"]');
+      // Seleccionamos el párrafo donde mostraremos el mensaje
+      const mensaje = document.querySelector("#mensaje-login");
+
+      // Añadimos un "escuchador" para el evento submit del formulario
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evitamos que la página se recargue por defecto
+
+        // Obtenemos el valor escrito en el campo email, sin espacios iniciales/finales
+        const email = emailInput.value.trim();
+        // Obtenemos el valor escrito en el campo contraseña, sin espacios
+        const password = passInput.value.trim();
+
+        // Limpiamos cualquier mensaje previo
+        mensaje.textContent = "";
+
+        // Si falta email o contraseña, mostramos mensaje de error básico
+        if (!email || !password) {
+          mensaje.textContent = "Por favor, completa email y contraseña.";
+          mensaje.style.color = "#ffb4b4"; // Color rojizo suave para error
+          return; // Cortamos aquí, no seguimos al fetch
+        }
+
+        // Realizamos petición para leer el archivo usuarios.json
+        fetch("usuarios.json")
+          // Convertimos la respuesta a objeto JS usando .json()
+          .then(function (res) {
+            return res.json();
+          })
+          // Con "datos" ya como objeto JS, trabajamos con la lista de usuarios
+          .then(function (datos) {
+            // Buscamos dentro de datos.usuarios un usuario que coincida en email y password
+            const usuarioValido = datos.usuarios.find(function (u) {
+              // Comparamos email y password del formulario con los del JSON
+              return u.email === email && u.password === password;
+            });
+
+            // Si encontramos un usuario que coincide
+            if (usuarioValido) {
+              // Mostramos mensaje de éxito personalizado con su nombre
+              mensaje.textContent =
+                "Usuario y contraseña válidos. Bienvenido, " +
+                usuarioValido.nombre +
+                " ✅";
+              // Color verdoso acorde al estilo del login
+              mensaje.style.color = "#aef9d8";
+            } else {
+              // Si no se encontró coincidencia, mostramos error de credenciales
+              mensaje.textContent = "Email o contraseña incorrectos.";
+              mensaje.style.color = "#ffb4b4";
+            }
+          })
+          // Si ocurre algún error al intentar leer el JSON (ruta, sintaxis, etc.)
+          .catch(function (error) {
+            // Lo mostramos en la consola para depurar
+            console.error("Error al leer usuarios.json:", error);
+            // Y avisamos también en la interfaz
+            mensaje.textContent =
+              "No se pudo validar el usuario. Revisa la configuración.";
+            mensaje.style.color = "#ffb4b4";
+          });
+      });
+    </script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Login Aplicación</title>
+    <meta charset="utf-8">
+    <style>
+      @font-face {
+        font-family: inicio;
+        src: url(fuentes/inicio.ttf);
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh; /* ocupa toda la pantalla */
+        display: flex;              /* centramos con flex */
+        justify-content: center;    /* centro horizontal */
+        align-items: center;        /* centro vertical */
+        background: url(fondo.jpg) center/cover no-repeat;
+      }
+
+      main {
+        width: 570px;
+        height: 640px;
+        background: rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        padding: 30px;
+        backdrop-filter:blur(15px);
+        text-align:center;
+        color:#d4eded;
+        font-family: verdana;
+        border: 1px solid rgba(202, 253, 212, 0.92); 
+        border-radius: 20px;
+      }
+      input[type=email],input[type=password],input[type=submit]{
+        width:100%;
+        margin:15px 0px;
+        padding:15px 0px;
+        border:none;
+        background:rgba(0,0,0,0);
+        border-bottom:1px solid rgba(202, 253, 212, 0.92);
+        outline:none;
+        font-weight:bold;
+        font-size: 20px;
+      }
+      input::placeholder {
+          color: #d4eded;
+      }
+      h1 {
+        font-size: 60px;
+        font-family: inicio, cursive;                
+        font-weight: normal;                           
+      }
+      input[type=submit]{
+        background:rgba(202, 253, 212, 0.92);
+        border:none;
+        color:darkslategrey;
+        border-radius:50px;
+      }
+      input[type=email]{
+        background:url(email.png);
+        background-repeat:no-repeat;
+        background-position:right center;
+        background-size:40px;
+      }      
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <h1>Iniciar sesión</h1>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Contraseña">
+        <input type="checkbox"> Recordar
+        <a href="recordar.html">Olvidé la contraseña</a>
+        <input type="submit" value="Acceder">
+        <p>No tengo cuenta</p>
+        <a href="crear.html">Crear una</a>
+      </form>
+    </main>
+  </body>
+</html>
+
+

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Login Aplicación</title>
+    <meta charset="utf-8">
+    <style>
+      @font-face {
+        font-family: inicio;
+        src: url(fuentes/LEMONMILK-Bold-inicio.otf);
+      }
+      @font-face {
+        font-family: parrafo;
+        src: url(fuentes/LEMONMILK-Light.otf);
+      }
+      @font-face {
+        font-family: subtitulo;
+        src: url(fuentes/LEMONMILK-Regular.otf);
+      }
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(fondo.jpg) center/cover no-repeat;
+      }
+
+      main {
+        width: 500px;
+        height: 570px;
+        background: rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        padding: 30px;
+        backdrop-filter: blur(15px);
+        text-align: center;
+        color: #d4eded;
+        font-family: verdana;
+        border: 3px solid rgba(202, 253, 212, 0.92); 
+        border-radius: 30px;
+        padding-bottom: 10px;
+        font-family: parrafo;  
+      }
+
+      input[type=email],
+      input[type=password],
+      input[type=submit] {
+        width: 100%;
+        margin: 15px 0px;
+        padding: 15px 0px;
+        border: none;
+        background: rgba(0,0,0,0);
+        border-bottom: 1px solid rgba(202, 253, 212, 0.92);
+        outline: none;
+        font-weight: bold;
+        font-size: 20px;
+        color: darkslategrey;
+      }
+
+      input::placeholder {
+        color: #d4eded;
+        font-family: parrafo; 
+      }
+
+      h1 {
+        font-size: 40px;
+        font-family: inicio, cursive;                
+        margin: 25px;
+        color: darkslategrey;
+        text-transform: uppercase;                 
+      }
+
+      input[type=submit] {
+        background: rgba(202, 253, 212, 0.92);
+        border: none;
+        color: darkslategrey;
+        width: 300px;
+        border-radius: 50px;
+        font-family: subtitulo;
+      }
+
+      input[type=email] {
+        background: url(email.png) no-repeat right center;
+        background-size: 25px;
+      }
+
+      input[type=password] {
+        background: url(password.png) no-repeat right center;
+        background-size: 25px;
+      }
+
+      .recordar-container {
+        display: inline-flex;              
+        align-items: center;              
+        gap: 5px;                
+        margin-top: 40px;
+      }
+      #olvidar {
+        margin-left: 30px; 
+      }
+
+      p {
+        margin-bottom: 5px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form> 
+        <h1>Iniciar sesión</h1>
+        <input type="email" placeholder="Email">        
+        <input type="password" placeholder="Contraseña">
+
+        <div class="recordar-container">
+          <input type="checkbox" id="recordar">
+          <label for="recordar">Recordar</label>
+        </div>
+        
+        <a href="recordar.html" id="olvidar">Olvidé la contraseña</a> 
+
+        <input type="submit" value="Acceder">           
+        <p>No tengo cuenta</p>
+        <a href="crear.html" id="crear">Crear una</a>               
+      </form>
+    </main>
+  </body>
+</html>
+
+
+

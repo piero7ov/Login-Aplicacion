@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>Login Aplicación</title>
+    <meta charset="utf-8">
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh; /* ocupa toda la pantalla */
+        display: flex;              /* centramos con flex */
+        justify-content: center;    /* centro horizontal */
+        align-items: center;        /* centro vertical */
+        background: url(fondo.jpg) center/cover no-repeat;
+      }
+
+      main {
+        width: 570px;
+        height: 640px;
+        background: rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form>
+        <h1>Iniciar sesión</h1>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Contraseña">
+        <input type="checkbox"> Recordar
+        <a href="recordar.html">Olvidé la contraseña</a>
+        <input type="submit" value="Acceder">
+        <p>No tengo cuenta</p>
+        <a href="crear.html">Crear una</a>
+      </form>
+    </main>
+  </body>
+</html>
+
+

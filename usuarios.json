@@ -1,0 +1,29 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Piero Olivares",
+      "email": "piero7ov@gmail.com",
+      "password": "piero123"
+    },
+    {
+      "nombre": "Ein Osan",
+      "email": "erin123@gmail.com",
+      "password": "erin123"
+    },
+    {
+      "nombre": "Admin General",
+      "email": "admin@gmail.com",
+      "password": "admin123"
+    },
+    {
+      "nombre": "Usuario Demo",
+      "email": "demo@gmail.com",
+      "password": "demo123"
+    },
+    {
+      "nombre": "Jose Vicente Carratala",
+      "email": "info@josevicentecarratala.com",
+      "password": "TAME123$"
+    }
+  ]
+}
